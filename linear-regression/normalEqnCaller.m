@@ -1,8 +1,8 @@
 printf('Loading up dataset for testing...\n');
-data = csvread('~/Downloads/nba_players_2015.csv');
-%% grab the defensive ratings
+data = csvread('${PATH-TO-CSV}');
+% grab the proper columns from the csv
 X = data(:, 5:6);
-%% grab the mins played
+% grab the mins played column
 y = data(:, 10);
 m = length(y);
 
@@ -15,5 +15,3 @@ theta = normalEqn(X, y);
 % Display normal equation's result
 fprintf('Theta computed from the normal equations: \n');
 fprintf(' %f \n', theta);
-
-fprintf('Running gradient descent ...\n');
