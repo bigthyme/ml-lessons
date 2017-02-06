@@ -1,9 +1,9 @@
 printf('Loading up dataset for testing...\n');
-data = csvread('${PATH-TO-CSV}');
+data = csvread('player-defense_2015.csv');
 % grab the proper columns from the csv
-X = data(:, 5:6);
+X = data(:, 1:2);
 % grab the mins played column
-y = data(:, 10);
+y = data(:, 3);
 m = length(y);
 
 % Add intercept term to X
